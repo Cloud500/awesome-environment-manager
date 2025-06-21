@@ -1,0 +1,32 @@
+[run]
+   branch = True
+   source = src
+   parallel = True
+   data_file = .coverage
+   omit =
+    */tests/*
+    */__pycache__/*
+    */site-packages/*
+    */venv/*
+    */.venv/*
+    setup.py
+
+
+   [html]
+   directory = reports/html
+
+   [xml]
+   output = reports/coverage.xml
+
+   [report]
+   exclude_lines =
+       pragma: no cover
+       def __repr__
+       if __name__ == .__main__.:
+   omit =
+    */tests/*
+    */__pycache__/*
+    */site-packages/*
+    */venv/*
+    */.venv/*
+    setup.py

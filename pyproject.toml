@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "awesome-environment-manager"
+version = "0.1.0"
+description = "A Python utility for automatically managing environment variables with type safety and easy configuration."
+authors = [
+    { name = "Christian Heinisch", email = "christian.heinisch@protonmail.com" },
+    ]
+readme = { file = "README.md", content-type = "text/markdown" }
+license = "EUPL-1.2"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.urls]
+# documentation = 'https://github.com/Cloud500/awesome-environment-manager'
+repository = 'https://github.com/Cloud500/awesome-environment-manager'
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
+    "python-dotenv>=1.1.0",
+]
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules --junitxml=reports/test-results.xml --cov=src/ --cov-report=xml --cov-report=html"
+testpaths = [
+    "tests/",
+]
+junit_family = 'xunit2'
+
+
+[tool.ruff]
+line-length = 120
+extend-select = []
+
