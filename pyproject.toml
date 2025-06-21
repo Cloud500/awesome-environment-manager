@@ -8,7 +8,7 @@ description = "A Python utility for automatically managing environment variables
 version = "0.0.0"
 authors = [
     { name = "Christian Heinisch", email = "christian.heinisch@protonmail.com" },
-    ]
+]
 readme = { file = "README.md", content-type = "text/markdown" }
 license = "EUPL-1.2"
 requires-python = ">=3.11"
@@ -25,13 +25,13 @@ test = [
     "python-dotenv>=1.1.0",
 ]
 build = [
-    "python-semantic-release>=10.1.0",
+    "build>=1.2.2.post1",
 ]
 
 [tool.semantic_release]
 commit_parser = "conventional"
 version_toml = ["pyproject.toml:project.version"]
-build_command = "uv build"
+build_command = "python -m build"
 
 
 [tool.semantic_release.changelog.default_templates]
