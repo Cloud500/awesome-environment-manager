@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "awesome-environment-manager"
-version = "0.1.0"
 description = "A Python utility for automatically managing environment variables with type safety and easy configuration."
+version = "0.0.0"
 authors = [
     { name = "Christian Heinisch", email = "christian.heinisch@protonmail.com" },
     ]
@@ -24,6 +24,31 @@ test = [
     "pytest-cov>=6.2.1",
     "python-dotenv>=1.1.0",
 ]
+build = [
+    "python-semantic-release>=10.1.0",
+]
+
+[tool.semantic_release]
+commit_parser = "conventional"
+version_toml = ["pyproject.toml:project.version"]
+build_command = "uv build"
+
+
+[tool.semantic_release.changelog.default_templates]
+changelog_file = "CHANGELOG.md"
+output_format = "md"
+
+[tool.semantic_release.changelog]
+exclude_commit_patterns = [
+    '''chore(?:\([^)]*?\))?: .+''',
+    '''ci(?:\([^)]*?\))?: .+''',
+    '''refactor(?:\([^)]*?\))?: .+''',
+    '''style(?:\([^)]*?\))?: .+''',
+    '''test(?:\([^)]*?\))?: .+''',
+    '''build\((?!deps\): .+)''',
+    '''Initial [Cc]ommit.*''',
+]
+
 
 [tool.pytest.ini_options]
 addopts = "--doctest-modules --junitxml=reports/test-results.xml --cov=src/ --cov-report=xml --cov-report=html"
