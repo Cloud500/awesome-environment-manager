@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "awesome-environment-manager"
 description = "A Python utility for automatically managing environment variables with type safety and easy configuration."
-version = "0.0.0"
+version = "1.0.0"
 authors = [
     { name = "Christian Heinisch", email = "christian.heinisch@protonmail.com" },
 ]
