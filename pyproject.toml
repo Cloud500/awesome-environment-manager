@@ -31,7 +31,7 @@ build = [
 [tool.semantic_release]
 commit_parser = "conventional"
 version_toml = ["pyproject.toml:project.version"]
-build_command = "curl -LsSf https://astral.sh/uv/install.sh | UV_ROOT=/usr/local sh && uv build"
+build_command = "curl -LsSf https://astral.sh/uv/install.sh | sh && PATH=\"/github/home/.local/bin:$PATH\" && uv build"
 
 
 [tool.semantic_release.changelog.default_templates]
