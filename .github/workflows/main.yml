@@ -50,7 +50,7 @@ jobs:
         run: uv sync --extra build
 
       - name: Python Semantic Release
-        uses: python-semantic-release/python-semantic-release@v8.7.0
+        uses: python-semantic-release/python-semantic-release@v10.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
