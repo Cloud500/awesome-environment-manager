@@ -9,3 +9,5 @@ reports/
 *.py[cod]
 uv.lock
 .coverage
+.env
+.secrets

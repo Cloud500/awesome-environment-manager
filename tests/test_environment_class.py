@@ -6,7 +6,7 @@ from unittest.mock import patch
 from aem import EnvironmentClass
 
 
-class TestEnvironmentVariables(EnvironmentClass):
+class EnvironmentVariablesTestClass(EnvironmentClass):
     # Klassenvariablen mit Typ-Hints
     test_string: str = "default_string"
     test_int: int = 0
@@ -33,7 +33,7 @@ def test_environment_variables(monkeypatch):
         monkeypatch.setenv(key, value)
 
     # Instanz der Testklasse erstellen
-    env = TestEnvironmentVariables()
+    env = EnvironmentVariablesTestClass()
 
     # Überprüfung der Werte
     assert env.test_string == "test_value"
@@ -82,7 +82,7 @@ def test_missing_environment_variables(monkeypatch):
         monkeypatch.delenv(var, raising=False)
 
     # Instanz erstellen - sollte die Standardwerte verwenden
-    env = TestEnvironmentVariables()
+    env = EnvironmentVariablesTestClass()
 
     assert env.test_string == "default_string"
     assert env.test_int == 0
